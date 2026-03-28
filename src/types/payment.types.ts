@@ -85,3 +85,15 @@ export interface RefundPaymentRequest {
   amount?: number;
   reason?: string;
 }
+
+// Payment Stats response - matches PaymentStatsDto in Backend
+export interface PaymentStatsResponse {
+  totalAmount: number;
+  totalCount: number;
+  cashAmount: number;
+  cashCount: number;
+  onlineAmount: number;
+  onlineCount: number;
+  fromDate: string;
+  toDate: string;
+}

@@ -1,3 +1,11 @@
+// InvoiceStatus
+export type InvoiceStatus =
+  | "Draft"
+  | "Unpaid"
+  | "Paid"
+  | "Cancelled"
+  | "Refunded"
+  | "Overdue";
 // Invoice item - matches InvoiceItemDto in Backend
 export interface InvoiceItem {
   name: string;
@@ -22,7 +30,7 @@ export interface InvoiceResponse {
   discount: number;
   total: number;
   currency: string;
-  status: string;
+  status: InvoiceStatus;
   dueDate: string | null;
   issuedDate: string;
   paidDate: string | null;
@@ -41,7 +49,7 @@ export interface InvoiceListResponse {
   subscriberName: string;
   total: number;
   currency: string;
-  status: string;
+  status: InvoiceStatus;
   issuedDate: string;
   paidDate: string | null;
 }

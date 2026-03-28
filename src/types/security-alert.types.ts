@@ -1,3 +1,5 @@
+export type AlertStatus = "New" | "Reviewed" | "Resolved" | "Ignored";
+
 // Security Alert response - matches SecurityAlertDto in Backend
 export interface SecurityAlertResponse {
   id: number;
@@ -7,7 +9,7 @@ export interface SecurityAlertResponse {
   username: string | null;
   occurrenceCount: number;
   severity: string;
-  status: string;
+  status: AlertStatus;
   telegramSent: boolean;
   createdAt: string;
   reviewedAt: string | null;

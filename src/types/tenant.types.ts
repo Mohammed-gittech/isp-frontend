@@ -94,3 +94,13 @@ export interface ConfirmTenantPaymentRequest {
   transactionId?: string;
   notes?: string;
 }
+
+// Current Subscribers Count response
+export interface CurrentSubscribersCountResponse {
+  tenantId: number;
+  tenantName: string;
+  currentSubscribers: number;
+  maxSubscribers: number;
+  canAddMore: boolean;
+  remaining: number;
+}
