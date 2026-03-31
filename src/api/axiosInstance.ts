@@ -3,7 +3,7 @@ import { store } from "../store";
 import { logout, setAccessToken } from "../store/slices/authSlice";
 
 // Base URL for all API requests
-const BASE_URL = "http://localhost:5029/api";
+const BASE_URL = "https://localhost:7216/api";
 
 // Create axios instance with default config
 const axiosInstance = axios.create({

@@ -1,14 +1,27 @@
-// Main application component - routing will be added later
+import { Routes, Route, Navigate } from "react-router-dom";
+import LoginPage from "./features/auth/LoginPage";
+import PublicRoute from "./components/shared/PublicRoute";
+import ProtectedRoute from "./components/shared/ProtectedRout";
+
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white rounded-xl shadow-md p-8">
-        <h1 className="text-2xl font-bold text-blue-600">
-          ISP Management System
-        </h1>
-        <p className="text-gray-500 mt-2">Tailwind CSS يعمل بنجاح ✅</p>
-      </div>
-    </div>
+    <Routes>
+      {/* Public Routes — only for non-authenticated users */}
+      <Route element={<PublicRoute />}>
+        <Route path="/login" element={<LoginPage />} />
+      </Route>
+
+      {/* Protected Routes — only for authenticated users */}
+      <Route element={<ProtectedRoute />}>
+        <Route
+          path="/dashboard"
+          element={<div>Dashboard — قريباً</div>}
+        ></Route>
+      </Route>
+
+      {/* Redirect root to login */}
+      <Route path="/" element={<Navigate to="/login" replace />} />
+    </Routes>
   );
 }
 
