@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import LoginPage from "./features/auth/LoginPage";
 import PublicRoute from "./components/shared/PublicRoute";
 import ProtectedRoute from "./components/shared/ProtectedRout";
+import MainLayout from "./layouts/MainLayout";
 
 function App() {
   return (
@@ -13,10 +14,20 @@ function App() {
 
       {/* Protected Routes — only for authenticated users */}
       <Route element={<ProtectedRoute />}>
-        <Route
-          path="/dashboard"
-          element={<div>Dashboard — قريباً</div>}
-        ></Route>
+        <Route element={<MainLayout />}>
+          <Route
+            path="/dashboard"
+            element={<div className="p-4">Dashboard — قريباً</div>}
+          />
+          <Route
+            path="/subscribers"
+            element={<div className="p-4">Subscribers — قريباً</div>}
+          />
+          <Route
+            path="/plans"
+            element={<div className="p-4">Plans — قريباً</div>}
+          />
+        </Route>
       </Route>
 
       {/* Redirect root to login */}
