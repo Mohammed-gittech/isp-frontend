@@ -3,6 +3,7 @@ import LoginPage from "./features/auth/LoginPage";
 import PublicRoute from "./components/shared/PublicRoute";
 import ProtectedRoute from "./components/shared/ProtectedRout";
 import MainLayout from "./layouts/MainLayout";
+import DashboardPage from "./features/dashboard/DashboardPage";
 
 function App() {
   return (
@@ -15,10 +16,7 @@ function App() {
       {/* Protected Routes — only for authenticated users */}
       <Route element={<ProtectedRoute />}>
         <Route element={<MainLayout />}>
-          <Route
-            path="/dashboard"
-            element={<div className="p-4">Dashboard — قريباً</div>}
-          />
+          <Route path="/dashboard" element={<DashboardPage />} />
           <Route
             path="/subscribers"
             element={<div className="p-4">Subscribers — قريباً</div>}

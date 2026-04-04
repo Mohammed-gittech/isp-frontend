@@ -271,10 +271,12 @@ function MainLayout() {
                 <BreadcrumbLink href="/dashboard">الرئيسية</BreadcrumbLink>
               </BreadcrumbItem>
               {getBreadcrumbs().map((crumb) => (
-                <BreadcrumbItem key={crumb.path}>
+                <React.Fragment key={crumb.path}>
                   <BreadcrumbSeparator />
-                  <BreadcrumbPage>{crumb.label}</BreadcrumbPage>
-                </BreadcrumbItem>
+                  <BreadcrumbItem>
+                    <BreadcrumbPage>{crumb.label}</BreadcrumbPage>
+                  </BreadcrumbItem>
+                </React.Fragment>
               ))}
             </BreadcrumbList>
           </Breadcrumb>
